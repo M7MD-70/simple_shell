@@ -57,8 +57,7 @@ int _putfd(char c, int fd)
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(fd, buf, i);
-		i = 0;
-	}
+		i = 0; }
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
 	return (1);
@@ -77,8 +76,7 @@ int _putsfd(char *str, int fd)
 
 	if (!str)
 		return (0);
-	while (*str)
-	{
+	while (*str)	{
 		i += _putfd(*str++, fd);
 	}
 	return (i);
